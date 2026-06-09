@@ -1,0 +1,32 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  external?: boolean;
+  class?: string;
+  [key: `data-${string}`]: string;
+}
+
+const { href, label, external = false, class: className, ...rest } = Astro.props;
+const rel = external ? "noopener noreferrer" : undefined;
+const target = external ? "_blank" : undefined;
+---
+
+<li class:list={["flex", className]}>
+  <a
+    class="group flex font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+    href={href}
+    target={target}
+    rel={rel}
+    {...rest}
+  >
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500"
+    >
+      <slot />
+    </svg>
+    <span class="ml-4">{label}</span>
+  </a>
+</li>

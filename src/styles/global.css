@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+/* The site is always dark (html.dark). Drive the dark: variant off
+   the class instead of the OS preference so it matches that behavior. */
+@custom-variant dark (&:where(.dark, .dark *));

@@ -1,0 +1,421 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const link = "text-teal-400 hover:text-teal-300 transition";
+const whatsapp = "https://wa.me/13102275317";
+const linkedin = "https://www.linkedin.com/in/rodcul";
+
+const btnPrimary =
+  "inline-flex items-center justify-center rounded-lg bg-teal-500 px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-teal-400";
+const btnSecondary =
+  "inline-flex items-center justify-center rounded-lg border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:border-zinc-500 hover:text-white";
+
+const helpItems = [
+  {
+    icon: "🎯",
+    title: "Conversion tracking & analytics",
+    body: "PostHog, GA4, server-side GTM, offline conversions to Google & Meta.",
+  },
+  {
+    icon: "⚡",
+    title: "Landing pages & funnels",
+    body: "Astro / Next.js / React, wired end-to-end to analytics.",
+  },
+  {
+    icon: "🤖",
+    title: "Custom MCP servers & AI agents",
+    body: "Run your stack — ads, analytics, Shopify, CRM, WhatsApp — from a chat box.",
+  },
+  {
+    icon: "📈",
+    title: "Paid ad optimization",
+    body: "Google, Meta & Amazon Ads, optimizing on pipeline, not clicks.",
+  },
+  {
+    icon: "🔌",
+    title: "Internal tools & automation",
+    body: "CRM integrations, lead-gen apps, n8n / Make workflows.",
+  },
+  {
+    icon: "🔎",
+    title: "Technical & programmatic SEO",
+    body: "Crawl, indexation, and content systems that scale.",
+  },
+];
+
+// Featured projects — real work, outcome first, with a visual.
+const projects = [
+  {
+    img: "/img/portfolio/flume.png",
+    metric: "+35% conversion",
+    title: "Landing Page CRO + Offline Conversion Tracking",
+    role: "Flume AI · Growth Engineer",
+    body: "Partnered with the paid-media team behind six-figure monthly ad spend. Rewrote the landing page from transcribed customer interviews (+35% conversion), instrumented PostHog for experimentation, and wired offline conversions through the full HubSpot funnel — booked → showed → qualified → quoted — back to Meta, Google & TikTok, so campaigns optimize on pipeline, not clicks.",
+    stack: "PostHog · HubSpot · Meta / Google / TikTok Ads",
+    href: "https://lp.tryflume.ai/",
+  },
+  {
+    img: "/img/portfolio/numedix.png",
+    metric: "Scaled to 7 figures",
+    title: "AI Ad-Ops & Trend Engine (Numedix)",
+    role: "Founder & Growth Engineer",
+    body: "Sole architect of the growth platform behind a 7-figure DTC supplement brand on Amazon MX & MercadoLibre. A Next.js + Postgres app wired to Claude via MCP runs Amazon ad-ops, monitors Buy Box / pricing / search rank, and automates listing & inventory. A proprietary engine detects trending supplements, so the brand only launches products with proven demand.",
+    stack: "Next.js · Postgres · Claude / MCP · Amazon Ads",
+    href: null,
+  },
+  {
+    img: "/img/portfolio/hf0.png",
+    metric: "100s of founders, zero friction",
+    title: "Self-Serve Room Booking for Founders Outside the Company Workspace",
+    role: "HF0 · Full-Stack Engineer",
+    body: "Room-booking platform for an SF accelerator where hundreds of resident founders — all outside the company's Google Workspace — needed to book rooms with integrated Zoom devices. Email auth (Supabase), server-side Google Calendar writes via domain-wide delegation, and Zoom Rooms occupancy fused into a live status board. Result: frictionless self-service booking for people Workspace couldn't see, with zero double-bookings.",
+    stack: "Next.js · TypeScript · Google Calendar API · Zoom · Supabase",
+    href: null,
+  },
+];
+
+const stats = [
+  {
+    metric: "8K → 250K",
+    unit: "daily organic visits",
+    body: "Diagnosed a bug and fixed a batch of technical SEO issues that were capping crawl and indexation — organic traffic climbed from 8,000 to 250,000 visits a day.",
+  },
+  {
+    metric: "100K+ / mo",
+    unit: "outbound emails",
+    body: "Scaled a Shopify app (PostPerk) to 100K+ emails per month while protecting deliverability — driving six figures in partner-store sales.",
+  },
+];
+
+// Ways to work together.
+const packages = [
+  {
+    name: "Hourly",
+    sub: "Time & materials",
+    body: "Best when scope is fuzzy — you're not sure what to build yet, need something debugged, or want a consultant in the room to think through growth strategy. We figure it out as we go.",
+    examples: null,
+  },
+  {
+    name: "2-week sprint",
+    sub: "40 hours · scoped up front",
+    body: "One focused block to ship something real. Example outcomes:",
+    examples: [
+      "Conversion-tracking rebuild — PostHog / GA4 + offline conversions to Google & Meta",
+      "Landing page + funnel, wired end-to-end to analytics",
+      "Custom MCP server / AI agent to run your stack from chat",
+      "Internal tool, lead-gen app, or data pipeline",
+    ],
+  },
+  {
+    name: "Fractional Growth Engineer",
+    sub: "10–20h / week · monthly retainer",
+    body: "Embedded as your part-time growth engineer — ongoing experiments, tracking, automation, and ad-ops. I drop in, find where to fit, and keep shipping.",
+    examples: null,
+  },
+];
+
+const tools = [
+  "PostHog", "GA4", "GTM (server-side)", "Google Ads", "Meta Ads",
+  "Amazon Ads", "HubSpot", "Shopify", "Next.js", "Astro", "React",
+  "Supabase", "Stripe", "BigQuery", "n8n", "Claude / MCP",
+];
+---
+
+<Layout
+  title="Rodney Cullen — Growth Engineer, San Francisco"
+  description="Growth engineer for fast-moving startups. Conversion tracking, landing pages & funnels, paid ads, custom MCP servers & AI agents — shipped and measured."
+  ogType="profile"
+>
+  <div class="flex w-full">
+    <!-- Background panel -->
+    <div class="fixed inset-0 flex justify-center sm:px-8">
+      <div class="flex w-full max-w-7xl lg:px-8">
+        <div class="w-full bg-zinc-900 ring-1 ring-white/10"></div>
+      </div>
+    </div>
+
+    <div class="relative flex w-full flex-col">
+      <main class="flex-auto">
+        <div class="px-5 sm:px-8 mt-14 sm:mt-24">
+          <div class="mx-auto w-full max-w-2xl lg:max-w-3xl">
+            <!-- Hero -->
+            <header>
+              <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-4 sm:gap-5">
+                  <img
+                    alt="Rodney Cullen"
+                    width="160"
+                    height="160"
+                    class="h-16 w-16 flex-none rounded-2xl object-cover ring-1 ring-white/15 sm:h-20 sm:w-20"
+                    src="/img/portrait.jpeg"
+                  />
+                  <div>
+                    <p class="text-lg font-semibold text-white sm:text-xl">
+                      Rodney Cullen
+                    </p>
+                    <p class="mt-0.5 text-sm text-teal-400">
+                      Growth Engineer · San Francisco
+                    </p>
+                  </div>
+                </div>
+                <a href="/about" class={`text-sm ${link}`}>About&nbsp;→</a>
+              </div>
+
+              <h1
+                class="mt-8 text-3xl font-bold tracking-tight text-white sm:mt-10 sm:text-5xl"
+              >
+                I build the tools, tracking, and systems that turn ideas into
+                measurable results.
+              </h1>
+
+              <p class="mt-5 text-base leading-relaxed text-zinc-300 sm:text-lg">
+                I plug into your GTM team as the technical arm — give me the
+                idea or the mystery and I turn it into a working fix, shipped
+                and measured. No long onboarding, no babysitting, no pulling
+                your engineers off their roadmap.
+              </p>
+
+              <!-- Primary CTAs -->
+              <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <a href="#" data-eu="rodcul" data-ed="gmail.com" class={btnPrimary}>
+                  Email me →
+                </a>
+                <a
+                  href={whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={btnSecondary}
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </header>
+
+            <!-- What I help with -->
+            <section class="mt-20">
+              <h2
+                class="text-sm font-semibold uppercase tracking-wider text-zinc-300"
+              >
+                What I help with
+              </h2>
+              <div class="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                {
+                  helpItems.map((item) => (
+                    <div class="flex gap-3">
+                      <div class="text-xl leading-none">{item.icon}</div>
+                      <div>
+                        <h3 class="font-semibold text-white">{item.title}</h3>
+                        <p class="mt-1 text-sm text-zinc-300">{item.body}</p>
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+            </section>
+
+            <!-- Portfolio (outcome-led, with visuals) -->
+            <section class="mt-20">
+              <h2
+                class="text-sm font-semibold uppercase tracking-wider text-zinc-300"
+              >
+                Portfolio
+              </h2>
+              <p class="mt-2 text-zinc-300">Real work, led by the outcome.</p>
+
+              <div class="mt-6 space-y-5">
+                {
+                  projects.map((p) => (
+                    <article class="overflow-hidden rounded-2xl border border-zinc-700/60 bg-zinc-900/60 transition hover:border-teal-500/40 sm:flex">
+                      <div class="bg-zinc-800 sm:w-2/5 sm:flex-none">
+                        <img
+                          src={p.img}
+                          alt={p.title}
+                          loading="lazy"
+                          class="aspect-[4/3] h-full w-full object-cover object-top"
+                        />
+                      </div>
+                      <div class="flex flex-1 flex-col p-6">
+                        <div class="text-xl font-bold tracking-tight text-teal-400">
+                          {p.metric}
+                        </div>
+                        <h3 class="mt-2 text-base font-semibold text-white">
+                          {p.title}
+                        </h3>
+                        <div class="mt-0.5 text-sm text-zinc-400">{p.role}</div>
+                        <p class="mt-3 text-sm leading-relaxed text-zinc-300">
+                          {p.body}
+                        </p>
+                        <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                          <span class="text-xs text-zinc-400">{p.stack}</span>
+                          {p.href && (
+                            <a
+                              href={p.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class="text-xs font-semibold text-teal-400 transition hover:text-teal-300"
+                            >
+                              Visit site →
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </article>
+                  ))
+                }
+              </div>
+
+              <div class="mt-5 grid gap-4 sm:grid-cols-2">
+                {
+                  stats.map((s) => (
+                    <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/60 p-6">
+                      <div class="text-2xl font-bold tracking-tight text-teal-400">
+                        {s.metric}
+                      </div>
+                      <div class="mt-1 text-xs font-medium uppercase tracking-wider text-zinc-400">
+                        {s.unit}
+                      </div>
+                      <p class="mt-3 text-sm text-zinc-300">{s.body}</p>
+                    </div>
+                  ))
+                }
+              </div>
+
+              <p class="mt-6 text-sm text-zinc-400">
+                Also: former Chief of Staff at HF0 (an SF startup residency),
+                launched an engineering hub in Barcelona, and ran a coffee shop
+                in Chiang Mai —
+                <a href="/about" class={link}>amongst other things →</a>
+              </p>
+            </section>
+
+            <!-- Tools -->
+            <section class="mt-20">
+              <h2
+                class="text-sm font-semibold uppercase tracking-wider text-zinc-300"
+              >
+                Tools &amp; stack
+              </h2>
+              <p class="mt-2 text-sm text-zinc-400">
+                The daily drivers — the full list is much longer. Hand me an
+                unfamiliar tool or API and I'll have it wired in fast.
+              </p>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                {
+                  tools.map((t) => (
+                    <li class="rounded-lg border border-zinc-700/70 bg-zinc-800/70 px-3 py-1.5 text-sm font-medium text-zinc-100">
+                      {t}
+                    </li>
+                  ))
+                }
+              </ul>
+            </section>
+
+            <!-- Ways to work together -->
+            <section class="mt-20">
+              <h2
+                class="text-sm font-semibold uppercase tracking-wider text-zinc-300"
+              >
+                Ways to work together
+              </h2>
+              <div class="mt-6 space-y-4">
+                {
+                  packages.map((p) => (
+                    <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/60 p-6 sm:grid sm:grid-cols-3 sm:gap-6">
+                      <div>
+                        <h3 class="text-base font-semibold text-white">
+                          {p.name}
+                        </h3>
+                        <div class="mt-1 text-xs font-medium uppercase tracking-wider text-zinc-400">
+                          {p.sub}
+                        </div>
+                      </div>
+                      <div class="mt-3 sm:col-span-2 sm:mt-0">
+                        <p class="text-sm leading-relaxed text-zinc-300">
+                          {p.body}
+                        </p>
+                        {p.examples && (
+                          <ul class="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-2">
+                            {p.examples.map((e) => (
+                              <li class="flex gap-2 text-sm text-zinc-300">
+                                <span class="text-teal-400">→</span>
+                                <span>{e}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+              <p class="mt-6 text-sm text-zinc-400">
+                Not sure which fits? Tell me what you're after and I'll
+                recommend the leanest way in — and what it'll take.
+              </p>
+              <a
+                href="#"
+                data-eu="rodcul"
+                data-ed="gmail.com"
+                class="mt-4 inline-flex items-center justify-center rounded-lg bg-teal-500 px-5 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-teal-400"
+              >
+                Get in touch →
+              </a>
+            </section>
+
+            <!-- Final CTA -->
+            <section
+              class="mt-20 rounded-2xl border border-teal-500/30 bg-teal-500/10 p-8 text-center"
+            >
+              <h2 class="text-2xl font-bold text-white">
+                Bring me the problem.
+              </h2>
+              <p class="mx-auto mt-3 max-w-xl text-zinc-300">
+                You don't need a spec — a rough idea or a number that doesn't
+                add up is enough. Send a couple of sentences and I'll reply
+                with how I'd approach it and what it'd take.
+              </p>
+              <div
+                class="mt-6 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap"
+              >
+                <a href="#" data-eu="rodcul" data-ed="gmail.com" class={btnPrimary}>
+                  Email me →
+                </a>
+                <a
+                  href={whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={btnSecondary}
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={btnSecondary}
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </section>
+
+            <footer class="mt-16 text-center text-sm text-zinc-500">
+              <a href="/about" class={link}>About</a> ·
+              <a href={linkedin} target="_blank" rel="noopener noreferrer" class={link}>LinkedIn</a>
+              · Rodney Cullen · San Francisco
+            </footer>
+          </div>
+        </div>
+      </main>
+
+      <div class="extra-bottom-padding"></div>
+    </div>
+  </div>
+
+  <script>
+    // Assemble mailto links client-side so the address never appears in the HTML.
+    document.querySelectorAll<HTMLAnchorElement>("a[data-eu]").forEach((a) => {
+      a.href = "mailto:" + a.dataset.eu + "@" + a.dataset.ed;
+    });
+  </script>
+</Layout>
